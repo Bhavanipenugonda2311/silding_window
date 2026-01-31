@@ -1,6 +1,5 @@
 class Solution:
-    def characterReplacement(self, s: str, k: int) -> int:
-        # s = "AAABBCCD" K = 2 
+    def characterReplacement(self, s: str, k: int):
         n = len(s) 
         left,right = 0,0 
         maxLen = 0 
@@ -9,7 +8,6 @@ class Solution:
         while(right<n):  
             mpp[ord(s[right])-ord('A')]+=1    
             maxFreq = max(maxFreq,mpp[ord(s[right])-ord('A')]) 
-            # shrink  
             while(right-left+1 - maxFreq > k):   
                 mpp[ord(s[left])-ord('A')]-=1
                 left+=1     
